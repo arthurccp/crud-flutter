@@ -1,6 +1,6 @@
 # CRUD_DART
 
-Esse é um projeto feito totalmente em flutter que visa incorporar o conceito CRUD na linguagem Dart utilizando flutter, aplicação híbrida criando Build pra IOS e Android
+Este é um projeto desenvolvido inteiramente em Flutter, utilizando a linguagem Dart, com o objetivo de implementar as operações CRUD (Create, Read, Update, Delete). A aplicação é híbrida, compatível com iOS e Android, permitindo a criação de builds para ambas as plataformas.
 
 ## Getting Started
 
