@@ -17,6 +17,7 @@ class UserList extends StatelessWidget {
         title: Text("User List"),
         leading: BackButton(
           onPressed: () {
+            userProvider.indexUser = null;
             Navigator.popAndPushNamed(context, "/create");
           },
         ),
@@ -36,7 +37,22 @@ class UserList extends StatelessWidget {
                             userProvider.indexUser = indexBuilder;
                             Navigator.popAndPushNamed(context, "/create");
                           },
-                          icon: Icon(Icons.edit))
+                          icon: Icon(Icons.edit)),
+                      IconButton(
+                          onPressed: () {
+                            userProvider.indexUser = null;
+                            userProvider.userSelected = users[indexBuilder];
+                            userProvider.indexUser = indexBuilder;
+                            Navigator.popAndPushNamed(context, "/view");
+                          },
+                          icon: Icon(Icons.visibility, color: Colors.blue)),
+                      IconButton(
+                          onPressed: () {
+                            userProvider.indexUser = null;
+                            userProvider.users.removeAt(indexBuilder);
+                            Navigator.popAndPushNamed(context, "/create");
+                          },
+                          icon: Icon(Icons.delete, color: Colors.red))
                     ],
                   ),
                 ),

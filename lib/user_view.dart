@@ -3,15 +3,10 @@ import 'package:meu_app/field_form.dart';
 import 'package:meu_app/user.dart';
 import 'package:meu_app/user_provider.dart';
 
-class UserForm extends StatefulWidget {
-  const UserForm({super.key});
+class UserView extends StatelessWidget {
+  UserView({super.key});
 
-  @override
-  State<UserForm> createState() => _UserFormState();
-}
-
-class _UserFormState extends State<UserForm> {
-  String title = "Create User";
+  String title = "Show User";
   TextEditingController controllerName = TextEditingController();
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController controllerPassword = TextEditingController();
@@ -26,26 +21,6 @@ class _UserFormState extends State<UserForm> {
       controllerName.text = userProvider.userSelected!.name;
       controllerEmail.text = userProvider.userSelected!.email;
       controllerPassword.text = userProvider.userSelected!.password;
-      print("save");
-      setState(() {
-        this.title = "Edit User";
-      });
-    }
-    void save() {
-      User user = User(
-          name: controllerName.text,
-          email: controllerEmail.text,
-          password: controllerPassword.text);
-
-      if (index != null) {
-        userProvider.users[index] = user;
-      } else {
-        int usersLength = userProvider.users.length;
-
-        userProvider.users.insert(usersLength, user);
-      }
-
-      Navigator.popAndPushNamed(context, "/List");
     }
 
     return Scaffold(
@@ -70,21 +45,45 @@ class _UserFormState extends State<UserForm> {
         child: Column(
           children: [
             FieldForm(
-                label: "Name", isPasword: false, controller: controllerName),
+                label: "Name",
+                isPasword: false,
+                controller: controllerName,
+                isForm: false),
             FieldForm(
-                label: "Email", isPasword: false, controller: controllerEmail),
+                label: "Email",
+                isPasword: false,
+                controller: controllerEmail,
+                isForm: false),
             FieldForm(
                 label: "Password",
-                isPasword: true,
-                controller: controllerPassword),
+                isPasword: false,
+                controller: controllerPassword,
+                isForm: false),
             SizedBox(
               width: double.infinity,
               child: TextButton(
-                onPressed: save,
-                child: Text("Salvar"),
+                onPressed: () {
+                  Navigator.popAndPushNamed(context, "/create");
+                },
+                child: Text("Edit"),
                 style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all(Theme.of(context).primaryColor),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {
+                  userProvider.indexUser = null;
+                  userProvider.users.removeAt(index!);
+                  Navigator.popAndPushNamed(context, "/create");
+                },
+                child: Text("delete"),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red),
                   foregroundColor: MaterialStateProperty.all(Colors.white),
                 ),
               ),

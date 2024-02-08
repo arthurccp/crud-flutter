@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meu_app/user_form.dart';
 import 'package:meu_app/user_list.dart';
 import 'package:meu_app/user_provider.dart';
+import 'package:meu_app/user_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         routes: {
           "/create": (_) => UserForm(),
           "/List": (_) => UserList(),
+          "/view": (_) => UserView(),
 
 
         },
