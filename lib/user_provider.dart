@@ -4,6 +4,8 @@ import 'package:meu_app/user.dart';
 class UserProvider extends InheritedWidget {
   final Widget child;
   List<User> users = [];
+  User? userSelected;
+  int? indexUser;
 
   UserProvider({
     required this.child,
@@ -16,5 +18,4 @@ class UserProvider extends InheritedWidget {
   bool updateShouldNotify(UserProvider widget) {
     return true;
   }
-
 }
