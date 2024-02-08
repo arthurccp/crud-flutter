@@ -1,16 +1,10 @@
-# meu_app
+# CRUD_DART
 
-A new Flutter project.
+Esse é um projeto feito totalmente em flutter que visa incorporar o conceito CRUD na linguagem Dart utilizando flutter, aplicação híbrida criando Build pra IOS e Android
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![WhatsApp Image 2024-02-08 at 01 09 50](https://github.com/arthurccp/indt-challenge/assets/66705949/d55e933c-28a7-484e-97c6-811cc796e305)
+![WhatsApp Image 2024-02-08 at 01 10 31](https://github.com/arthurccp/indt-challenge/assets/66705949/676111d3-062d-4b90-ae1d-003f2636b12f)
+![WhatsApp Image 2024-02-08 at 01 11 02](https://github.com/arthurccp/indt-challenge/assets/66705949/1d02ca5f-f71c-4b91-8334-d745093ea661)
